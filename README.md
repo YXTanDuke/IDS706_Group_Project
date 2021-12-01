@@ -59,20 +59,62 @@ https://www.youtube.com/watch?v=inN8seMm7UI
 
 ## Write code for a Linear Regression Model
 
-### TODO @Yongxin Tan
+Linear regression is a basic and commonly used type of predictive analysis. These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables. The aim of Linear Regression is to minimize the distance between the points and the line y=αx+β. 
 
-1. Load Dataset
-2. Make Dataset Iterable
-3. Create Model Class
-4. Instantiate Model Class
-5. Instantiate Loss Class
-6. Instantiate Optimizer Class
-7. Train Model
+* α is the coefficients and β is the bias/intercept.
+
+To write code for a Linear Regression Model, you can perform the following steps:
+
+1. Build Dataset
+    ```
+    def _build_dataset():
+        x_values = [i for i in range(11)]
+        x_train = np.array(x_values, dtype=np.float32)
+        x_train = x_train.reshape(-1, 1)
+
+        y_values = [2*i + 1 for i in x_values]
+        y_train = np.array(y_values, dtype=np.float32).reshape(-1, 1)
+        return x_train, y_train
+    ```
+2. Create Model Class
+    ```
+    class LinearRegressionModel(nn.Module):
+        def __init__(self, input_dim, output_dim):
+            super(LinearRegressionModel, self).__init__()
+            self.linear = nn.Linear(input_dim, output_dim)  
+        
+        def forward(self, x):
+            out = self.linear(x)
+            return out
+    ```
+3. Instantiate Model Class
+    ```
+    model = LinearRegressionModel(input_dim, output_dim)
+    ```
+4. Instantiate Loss Class
+    ```
+    criterion = nn.MSELoss()
+    ```
+5. Instantiate Optimizer Class
+    ```
+    optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
+    ```
+6. Train the Model
+    ```
+    for epoch in range(epochs):
+        epoch += 1
+        inputs = torch.from_numpy(x_train).requires_grad_()
+        labels = torch.from_numpy(y_train)
+        optimizer.zero_grad() 
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+        print('epoch {}, loss {}'.format(epoch, loss.item()))
+    ```
+
+More detailed code can be found in `/src/CPU_linear_regression.py`
 
 ## Train a model on Google Colab
-
-### TODO @Chang Xu
-
-## Summary
 
 ### TODO @Chang Xu
