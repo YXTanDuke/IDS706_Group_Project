@@ -51,11 +51,20 @@ https://www.youtube.com/watch?v=inN8seMm7UI
 
 ## Matrix Basics
 
-### TODO @Yongxin Tan
+* If you want to learn martices from a math perspective, Khan Academy has a wonderful tutorial where you can find here: (https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:mat-intro/a/intro-to-matrices)
+
+* If you want to learn how to creata a matrix in Python and play with it, you can find example code in `/src/matrices.py`
 
 ## PyTorch Basics
 
-### TODO @Yongxin Tan
+* PyTorch is a Python package that provides two high-level features:
+
+    1. Tensor computation (like NumPy) with strong GPU acceleration
+    2. Deep neural networks built on a tape-based autograd system
+
+* Full document about PyTorch can be found here: https://pypi.org/project/torch/
+
+* Example code about Torch can be found in `/src/torch_operations.py` and `/src/np_torch_bridge.py`
 
 ## Write code for a Linear Regression Model
 
