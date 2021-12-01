@@ -22,17 +22,14 @@ In this document, we will provide the following contents:
 If you want to play with the code locally, Python is the only thing you need. 
 
 1. Start by installing Homebrew:
-
     ```
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 2. Install Pyenv using Homebrew to manage your Python version:
-
     ```
     brew install pyenv
     ```
 3. Install Python using Pyenv, we recommend using Python 3.9:
-
     ```
     pyenv install 3.9.2 
     ```
