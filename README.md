@@ -12,7 +12,7 @@ In this document, we will provide the following contents:
 * Basic matrix operations
 * Basic data structures for PyTorch
 * How to write a linear regression model
-* How to train a XXX model using Google Colab
+* How to train a model using Google Colab
 * Resource links for each topic
 
 ## Getting Started
